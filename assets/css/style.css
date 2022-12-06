@@ -1,0 +1,55 @@
+body, html {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5em;
+    color: #3a3a3a;
+}
+
+body {
+    padding-top: 100px;
+}
+
+.hidden {
+    display: none;
+}
+
+/*btn-circle*/
+.btn-circle {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    padding: 0.25rem 0;
+}
+
+/*footer-sep*/
+.footer-sep {
+    margin: 1rem 0;
+    min-height: 50px;
+}
+
+/*navbar*/
+.navbar {
+    border-bottom: solid 2px rgba(80, 80, 80, 0.3);
+    padding-top: 0.6rem;
+    padding-bottom: 0.7rem;
+}
+
+.dropdown-li img {
+    display: inline-block;
+    margin: 0.25rem 0.5rem;
+}
+
+.dropdown-li .dropdown-item {
+    display: inline-block;
+    padding: 0.25rem;
+    width: auto;
+}
+
+/* Page title */
+.pag-title {
+    color: #369;
+    font-size: 25px;
+    font-weight: 700;
+    padding-bottom: .4em;
+    border-bottom: solid 2px #369;
+}
