@@ -8,6 +8,8 @@ define("PAGE_FOOTER", INC . "main/footer.php");
 define("PAGE_NAVBAR", INC . "main/navbar.php");
 
 define("WEBROOT", 'http://exemplo.pdo.loc/');
+// define("WEBROOT", 'http://localhost/M17/');
+
 define("PAGES_URL", WEBROOT . "pages/");
 define("ASSETS_URL", WEBROOT . 'assets/');
 define("CSS_URL", ASSETS_URL . 'css/');

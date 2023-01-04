@@ -3,6 +3,10 @@ require_once '../../config.php';
 
 require_once PAGE_HEADER;
 require_once PAGE_NAVBAR;
+require_once APP_CLASSES . 'Utilizador.php';
+
+$users = Utilizador::lista();
+
 ?>
 
 <div class="container">
