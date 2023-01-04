@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="pt-pt">
 <head>
@@ -20,8 +19,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 
     <!-- My CSS -->
-    <link href="<?= ASSETS_URL ?>css/style.css?t=<?= (DEBUG_MODE?time():1)?>" rel="stylesheet" type="text/css">
+    <link href="<?= CSS_URL ?>style.css?t=<?php time() ?>" rel="stylesheet">
 
-    <title>M17</title>
+    <title>Projeto M17</title>
 </head>
 <body>

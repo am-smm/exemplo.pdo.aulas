@@ -4,10 +4,6 @@ body, html {
     color: #3a3a3a;
 }
 
-body {
-    padding-top: 100px;
-}
-
 .hidden {
     display: none;
 }
