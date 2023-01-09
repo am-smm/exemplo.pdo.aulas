@@ -12,6 +12,7 @@ class Utilizador
     //  -> 2022-12-24 => string
     private string $dh_registo;
 
+    // ------------------------------------------------
     //region __construct
 
     // ------------------------------------------------
@@ -29,6 +30,7 @@ class Utilizador
              ->setPsw($psw)
              ->setDhRegisto($dh_registo);
     }
+
     //endregion
 
     // ------------------------------------------------
@@ -85,4 +87,47 @@ class Utilizador
 
     //endregion
 
+    // ------------------------------------------------
+    //region Métodos Estáticos
+
+    public static function fromArray($reg): Utilizador {
+        return new Utilizador(
+            array_get('id', $reg, 0),
+            array_get('nome', $reg, ''),
+            array_get('apelido', $reg, ''),
+            array_get('username', $reg, ''),
+            array_get('email', $reg, ''),
+            array_get('psw', $reg, ''),
+            array_get('dh_registo', $reg, '')
+        );
+    }
+
+    public static function todos(): array {
+        $data = bd()->fetchQuery("SELECT * FROM utilizador ORDER BY nome, apelido;");
+        $objArray = [];
+        foreach ($data as $reg)  $objArray[] = Utilizador::fromArray($reg);
+        return $objArray;
+    }
+
+    public static function __todos($asObjects = false): array {
+        $data = bd()->fetchQuery("SELECT * FROM utilizador ORDER BY nome, apelido;");
+        if ($asObjects) {
+            $dataAsObjects = [];
+            foreach ($data as $reg) $dataAsObjects[] = Utilizador::fromArray($reg);
+            $data = $dataAsObjects;
+        }
+        return $data;
+    }
+
+    public static function tryGetById($id, &$user) {
+        $user = new Utilizador();
+        $data = bd()->fetchQuery("SELECT * FROM utilizador WHERE id = :userID;", ['userID' => $id]);
+        if (isset($data[0])) {
+            $user = Utilizador::fromArray($data[0]);
+            return true;
+        }
+        return false;
+    }
+
+    //endregion
 }
